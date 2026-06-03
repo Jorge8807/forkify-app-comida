@@ -1,4 +1,3 @@
-import { Fraction } from 'fractional';
 import View from './View.js';
 import icons from '../../img/icons.svg';
 
@@ -13,7 +12,18 @@ class RecipeView extends View {
 
   _formatQuantity(quantity) {
     if (!quantity) return '';
-    return new Fraction(quantity).toString();
+
+    if (Number.isInteger(quantity)) return quantity;
+
+    const denominators = [2, 3, 4, 5, 6, 8];
+    const denominator = denominators.find(den =>
+      Number.isInteger(quantity * den)
+    );
+
+    if (!denominator) return quantity;
+
+    const numerator = quantity * denominator;
+    return `${numerator}/${denominator}`;
   }
 
   _generateMarkup() {
