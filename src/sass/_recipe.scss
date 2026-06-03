@@ -9,6 +9,10 @@
     // transform: scale(1.04) translateY(-1px);
     transform-origin: top;
 
+    @media only screen and (max-width: $bp-small) {
+      height: 24rem;
+    }
+
     &::before {
       content: '';
       display: block;
@@ -60,6 +64,12 @@
     @media only screen and (max-width: $bp-medium) {
       width: 70%;
     }
+
+    @media only screen and (max-width: $bp-small) {
+      width: 85%;
+      font-size: 2.2rem;
+      line-height: 1.7;
+    }
   }
 
   ///////////
@@ -68,6 +78,13 @@
     display: flex;
     align-items: center;
     padding: 7.5rem 8rem 3.5rem 8rem;
+
+    @media only screen and (max-width: $bp-small) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.8rem;
+      padding: 6rem 2rem 3rem;
+    }
   }
 
   &__info {
@@ -78,6 +95,10 @@
 
     &:not(:last-child) {
       margin-right: 4.5rem;
+
+      @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+      }
     }
   }
 
@@ -112,6 +133,11 @@
     margin-left: auto;
     margin-right: 1.75rem;
 
+    @media only screen and (max-width: $bp-small) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
     svg {
       height: 2.25rem;
       width: 2.25rem;
@@ -129,6 +155,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 4rem 2.5rem;
+    }
   }
 
   &__ingredient-list {
@@ -136,6 +166,10 @@
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem 3rem;
     list-style: none;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__ingredient {
@@ -164,6 +198,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 4rem 2.5rem;
+    }
   }
 
   &__directions-text {
